@@ -22,9 +22,14 @@ def run_automata(rule_number, initial_state, num_steps):
 def plot_automata(history):
     cells = np.array([[int(cell) for cell in row] for row in history])
     plt.imshow(cells, cmap="binary", interpolation="nearest")
+    plt.xlabel("Cells")
+    plt.ylabel("Time")
     plt.show()
 
 if __name__ == "__main__":
     rule_number = 30
     initial_state = "0000000001000000000"
     num_steps = 15
+
+    history = run_automata(rule_number, initial_state, num_steps)
+    plot_automata(history)
