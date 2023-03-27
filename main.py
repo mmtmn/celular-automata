@@ -27,9 +27,12 @@ def plot_automata(history):
     plt.show()
 
 if __name__ == "__main__":
-    rule_number = 30
-    initial_state = "0000000001000000000"
-    num_steps = 15
-
-    history = run_automata(rule_number, initial_state, num_steps)
-    plot_automata(history)
+    while True:
+        rule_number = int(input("Enter rule number: "))
+        initial_state = "0000000001000000000"
+        num_steps = int(input("Enter number of steps: "))
+        history = run_automata(rule_number, initial_state, num_steps)
+        plot_automata(history)
+        exit = input("Exit? (y/n): ")
+        if exit == "y" or exit == "yes":
+            break
